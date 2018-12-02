@@ -23,13 +23,13 @@ RUN npm -g install yarn
 RUN yarn
 RUN yarn global add express-generator@4.16.0
 RUN yarn global add ts-node
-RUN yarn add nodemon
+RUN yarn global add nodemon
 RUN yarn add express
 RUN yarn add mongodb
 RUN yarn add mongoose
 RUN yarn add body-parser
 RUN yarn add moment
-RUN yarn add typescript
+RUN yarn global add typescript
 
 RUN yarn global add truffle
 
