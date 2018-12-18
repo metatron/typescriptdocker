@@ -3,7 +3,7 @@ services:
   webserver:
     build: ./
     image: node-express-dev:1.0
-    container_name: tsc
+    container_name: nagesen
     tty: true
     volumes:
       - ./src:/src
