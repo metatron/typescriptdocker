@@ -17,39 +17,23 @@ RUN apk add --update \
     py-pip \
     build-base
 
-RUN apk add --update python-dev build-base jpeg-dev zlib-dev freetype-dev libjpeg-turbo-dev libpng-dev
-
-# 日本語フォント追加（wordcloud文字化け対応）
-RUN apk update \
-  && apk add --no-cache curl fontconfig \
-  && curl -O https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip \
-  && mkdir -p /usr/share/fonts/NotoSansCJKjp \
-  && unzip NotoSansCJKjp-hinted.zip -d /usr/share/fonts/NotoSansCJKjp/ \
-  && rm NotoSansCJKjp-hinted.zip \
-  && fc-cache -fv
-
 RUN npm -g uninstall yarn
 RUN npm -g install yarn
-
-RUN git config --global url."https://".insteadOf git://
 
 RUN yarn
 RUN yarn global add express-generator@4.16.0
 RUN yarn global add ts-node
 RUN yarn global add nodemon
-#これが無いとweb3がインストールされない。
-RUN yarn global add node-gyp
 RUN yarn add express
 RUN yarn add mongodb
 RUN yarn add mongoose
 RUN yarn add body-parser
 RUN yarn add moment
-#python2.7出ないとビルドできない。
-RUN yarn add web3
 RUN yarn global add typescript
 
 RUN yarn global add truffle
 
+RUN git config --global url."https://".insteadOf git://
 
 
 # ディレクトリを作成
