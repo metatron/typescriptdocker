@@ -46,6 +46,7 @@ RUN yarn add body-parser
 RUN yarn add moment
 #python2.7出ないとビルドできない。
 RUN yarn add web3
+RUN yarn add ethereumjs-tx
 RUN yarn global add typescript
 
 RUN yarn global add truffle
