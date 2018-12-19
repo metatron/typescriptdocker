@@ -2,6 +2,7 @@ import tweepy
 from twstreamlistener import TwStreamListener
 
 # 時間もあわせないと401エラーが返ってくる
+# apk --update add tzdata && cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && apk del tzdata && rm -rf /var/cache/apk/*
 
 Consumer_key = 'UyAIOxvesKKY2UG15UTh6q4qA'
 Consumer_secret = '0YCYlkj7QHdmhgxlk71SBS6aAuq3GG33ipLbdFI5JBVnuDbzKV'
