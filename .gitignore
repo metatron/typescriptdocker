@@ -1,6 +1,8 @@
 .DS_Store
 src/bin/
 
+*.pyc
+
 # Logs
 logs
 *.log
