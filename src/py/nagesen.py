@@ -1,8 +1,10 @@
 import tweepy
 from twstreamlistener import TwStreamListener
 
-# 時間もあわせないと401エラーが返ってくる
+# need to adjust the time otherwise it returns 401
 # apk --update add tzdata && cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && apk del tzdata && rm -rf /var/cache/apk/*
+# docker run --rm --privileged alpine hwclock -s
+
 
 Consumer_key = 'UyAIOxvesKKY2UG15UTh6q4qA'
 Consumer_secret = '0YCYlkj7QHdmhgxlk71SBS6aAuq3GG33ipLbdFI5JBVnuDbzKV'
@@ -16,6 +18,6 @@ try:
 
     twStreamListener = TwStreamListener()
     twStream = tweepy.Stream(auth = api.auth, listener=twStreamListener)
-    twStream.filter(track=['crypto'])
+    twStream.filter(track=['heppokopu'])
 except Exception as e:
     print(e)

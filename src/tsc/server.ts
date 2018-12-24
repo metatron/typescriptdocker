@@ -62,7 +62,7 @@ express.listen(port, () => {
      //web3 1.0.0 does not support HttpProvider (https://ethereum.stackexchange.com/questions/39890/which-version-of-web3-js-should-i-use)
      //app.web3 = new Web3(new Web3.providers.WebsocketProvider("ws://localhost:8545"));
      //app.web3 = new Web3(new Web3.providers.WebsocketProvider("wss://ropsten.infura.io/hr1s0JoyZSF1c0aA2FoT")); //doesnt work
-     app.web3 = new Web3(new Web3.providers.HttpProvider("http://172.23.0.3:8545"));
+     app.web3 = new Web3(new Web3.providers.HttpProvider("http://172.18.0.3:8545"));
      //appClass.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/hr1s0JoyZSF1c0aA2FoT"));
 
     // }
