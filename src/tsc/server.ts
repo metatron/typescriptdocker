@@ -11,7 +11,7 @@ const app = new App();
 
 
 // parse application/x-www-form-urlencoded
-express.use(bodyParser.urlencoded({ extended: false }));
+express.use(bodyParser.urlencoded({ extended: true })); //enable post request
 
 // parse application/json
 express.use(bodyParser.json());
@@ -39,6 +39,13 @@ express.get('/sendValue', (req, res) => {
   });
 });
 
+express.post('/sendValue', (req, res) => {
+  console.log(req.body);
+  app.sendValue(req.body.f, req.body.p, req.body.t, req.body.a, (res2) => {
+    res.json(res2);
+  });
+});
+
 
 // exp.use('/article', article);
 // exp.use('/auth', auth);
@@ -47,13 +54,11 @@ express.get('/sendValue', (req, res) => {
 express.listen(port, () => {
     console.log('Listen started at port ' + port);
 
-    var web3 = new Web3(Web3.givenProvider);
-
-    // if (web3) {
-  	//   console.log("=======Log1");
+    // if (Web3.givenProvider) {
+    //     console.log("=======Log1");
     //   console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     //
-    //   app.web3 = web3;
+    //   app.web3 = new Web3(Web3.givenProvider);
     // }
     // else {
      console.log("=======Log2");
@@ -62,7 +67,7 @@ express.listen(port, () => {
      //web3 1.0.0 does not support HttpProvider (https://ethereum.stackexchange.com/questions/39890/which-version-of-web3-js-should-i-use)
      //app.web3 = new Web3(new Web3.providers.WebsocketProvider("ws://localhost:8545"));
      //app.web3 = new Web3(new Web3.providers.WebsocketProvider("wss://ropsten.infura.io/hr1s0JoyZSF1c0aA2FoT")); //doesnt work
-     app.web3 = new Web3(new Web3.providers.HttpProvider("http://172.18.0.3:8545"));
+     app.web3 = new Web3(new Web3.providers.HttpProvider("http://172.23.0.3:8545"));
      //appClass.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/hr1s0JoyZSF1c0aA2FoT"));
 
     // }

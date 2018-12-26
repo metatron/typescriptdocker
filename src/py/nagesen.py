@@ -16,8 +16,8 @@ try:
     auth.set_access_token(Access_token, Access_secret)
     api = tweepy.API(auth, wait_on_rate_limit = True)
 
-    twStreamListener = TwStreamListener()
+    twStreamListener = TwStreamListener(api)
     twStream = tweepy.Stream(auth = api.auth, listener=twStreamListener)
-    twStream.filter(track=['heppokopu'])
+    twStream.filter(track=['@heppokopu'])
 except Exception as e:
     print(e)

@@ -33,7 +33,7 @@ export default class App {
 				from: fromAddress,
 				to: toAddress,
 				value: this.web3.utils.toHex(amount),
-			    chainId: 100
+			  chainId: 100
     		};
     		var tx = new Tx(rawTx);
 
