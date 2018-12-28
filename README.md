@@ -1,2 +1,1 @@
-# typescriptdocker
-typescript framework
+tipping framework using python, tweepy, web3, and nodejs
