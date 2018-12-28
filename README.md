@@ -1,1 +1,2 @@
-tipping framework using python, tweepy, web3, and nodejs
+tipping framework using python, tweepy, web6, and nodejs.
+
